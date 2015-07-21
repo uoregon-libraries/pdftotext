@@ -501,8 +501,8 @@ void printLine(FILE *f, TextLine *line) {
   }
   fprintf(f, "        <line xMin=\"%f\" yMin=\"%f\" xMax=\"%f\" yMax=\"%f\">\n",
           lineXMin, lineYMin, lineXMax, lineYMax);
-  fprintf(f, wordXML.str().c_str());
-  fprintf(f, "        </line>\n");
+  fputs(wordXML.str().c_str(), f);
+  fputs("        </line>\n", f);
 }
 
 void printDocBBox(FILE *f, PDFDoc *doc, TextOutputDev *textOut, int first, int last) {
